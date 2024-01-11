@@ -1,20 +1,18 @@
 import { createContext, useContext, useReducer, useState } from 'react';
-
-// reducer actions
+import reducer from '../reducer/reducer';
+import cartItems from '../data';
 import {
-  INCREASE_ITEM,
-  DECREASE_ITEM,
-  REMOVE_ITEM,
+  INCREASE,
+  DECREASE,
+  REMOVE,
   CLEAR_CART,
+  LOADING,
+  DISPLAY_ITEMS,
 } from '../reducer/action';
 
-// reducer
-import reducer from '../reducer/reducer';
-
-import cartItems from '../data';
-
 const defaultState = {
-  cartItems: new Map(),
+  loading: false,
+  cart: [],
 };
 
 const GlobalContext = createContext();
@@ -25,11 +23,11 @@ const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
   const increaseItem = () => {
-    dispatch({ type: INCREASE_ITEM });
+    dispatch({ type: INCREASE });
   };
 
   return (
-    <GlobalContext.Provider value={{ increaseItem }}>
+    <GlobalContext.Provider value={{ ...state }}>
       {children}
     </GlobalContext.Provider>
   );

@@ -1,30 +1,42 @@
 import {
-  INCREASE_ITEM,
-  DECREASE_ITEM,
-  REMOVE_ITEM,
+  INCREASE,
+  DECREASE,
+  REMOVE,
   CLEAR_CART,
+  LOADING,
+  DISPLAY_ITEMS,
 } from './action';
 
 import cartItems from '../data';
 
 const reducer = (state, action) => {
-  if (action.type === INCREASE_ITEM) {
-    console.log('INCREASE_ITEM');
+  if (action.type === INCREASE) {
+    console.log('INCREASE');
     return { ...state };
   }
 
-  if (action.type === DECREASE_ITEM) {
-    console.log('DECREASE_ITEM');
+  if (action.type === DECREASE) {
+    console.log('DECREASE');
     return { ...state };
   }
 
-  if (action.type === REMOVE_ITEM) {
-    console.log('REMOVE_ITEM');
+  if (action.type === REMOVE) {
+    console.log('REMOVE');
     return { ...state };
   }
 
   if (action.type === CLEAR_CART) {
     console.log('CLEAR_CART');
+    return { ...state };
+  }
+
+  if (action.type === LOADING) {
+    console.log('LOADING');
+    return { ...state };
+  }
+
+  if (action.type === DISPLAY_ITEMS) {
+    console.log('DISPLAY_ITEMS');
     return { ...state };
   }
 
