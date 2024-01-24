@@ -22,12 +22,12 @@ export const useGlobalContext = () => useContext(GlobalContext);
 const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
-  const increaseItem = () => {
-    dispatch({ type: INCREASE });
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART });
   };
 
   return (
-    <GlobalContext.Provider value={{ ...state }}>
+    <GlobalContext.Provider value={{ ...state, clearCart }}>
       {children}
     </GlobalContext.Provider>
   );
