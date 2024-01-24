@@ -26,8 +26,12 @@ const AppContext = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
 
+  const remove = (id) => {
+    dispatch({ type: REMOVE, payload: { id } });
+  };
+
   return (
-    <GlobalContext.Provider value={{ ...state, clearCart }}>
+    <GlobalContext.Provider value={{ ...state, clearCart, remove }}>
       {children}
     </GlobalContext.Provider>
   );
