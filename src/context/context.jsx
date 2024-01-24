@@ -10,11 +10,9 @@ import {
   DISPLAY_ITEMS,
 } from '../reducer/action';
 
-const newMap = new Map();
-
 const defaultState = {
   loading: false,
-  cart: new Map(),
+  cart: new Map(cartItems.map((item) => [item.id, item])),
 };
 
 const GlobalContext = createContext();
