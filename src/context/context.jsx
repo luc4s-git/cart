@@ -30,8 +30,12 @@ const AppContext = ({ children }) => {
     dispatch({ type: REMOVE, payload: { id } });
   };
 
+  const increase = (id) => {
+    dispatch({ type: INCREASE, payload: { id } });
+  };
+
   return (
-    <GlobalContext.Provider value={{ ...state, clearCart, remove }}>
+    <GlobalContext.Provider value={{ ...state, clearCart, remove, increase }}>
       {children}
     </GlobalContext.Provider>
   );
