@@ -9,9 +9,11 @@ const Navbar = () => {
         <h4>useReducer</h4>
         <div className="nav-container">
           <FaCartPlus className="cart-icon" />
-          <div className="amount-container">
-            <p className="total-amount">{totalAmount}</p>
-          </div>
+          {totalAmount > 0 ? (
+            <div className="amount-container">
+              <p className="total-amount">{totalAmount}</p>
+            </div>
+          ) : null}
         </div>
       </div>
     </nav>
