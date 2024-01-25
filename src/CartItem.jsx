@@ -2,7 +2,7 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import { useGlobalContext } from './context/context';
 
 const CartItem = ({ id, img, title, price, amount }) => {
-  const { remove, increase, decrease } = useGlobalContext();
+  const { remove, increase, decrease, total } = useGlobalContext();
 
   return (
     <article className="cart-item">
